@@ -136,18 +136,21 @@
           }
         });
       }
-      let index = 0,
-        next = null;
+      let index = 0;
 
       $(imagesCollection).each(function (i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
           index = i;
         }
       });
-      next =
-        imagesCollection[index] ||
-        imagesCollection[imagesCollection.length - 1];
-      $(".lightboxImage").attr("src", $(next).attr("src"));
+
+      let newIndex = index - 1;
+      if (newIndex < 0) newIndex = imagesCollection.length - 1;
+
+      $(".lightboxImage").attr(
+        "src",
+        $(imagesCollection[newIndex]).attr("src")
+      );
     },
     nextImage() {
       let activeImage = null;
@@ -158,6 +161,7 @@
       });
       let activeTag = $(".tags-bar span.active-tag").data("images-toggle");
       let imagesCollection = [];
+
       if (activeTag === "all") {
         $(".item-column").each(function () {
           if ($(this).children("img").length) {
@@ -171,17 +175,22 @@
           }
         });
       }
-      let index = 0,
-        next = null;
+      let index = 0;
 
       $(imagesCollection).each(function (i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
           index = i;
         }
       });
-      next = imagesCollection[index] || imagesCollection[0];
-      $(".lightboxImage").attr("src", $(next).attr("src"));
+      let newIndex = index + 1;
+      if (newIndex >= imagesCollection.length) newIndex = 0;
+
+      $(".lightboxImage").attr(
+        "src",
+        $(imagesCollection[newIndex]).attr("src")
+      );
     },
+
     createLightBox(gallery, lightboxId, navigation) {
       gallery.append(`<div class="modal fade" id="${
         lightboxId ? lightboxId : "galleryLightbox"
@@ -197,7 +206,7 @@
                             <img class="lightboxImage img-fluid" alt="Contenu de l'image affichée dans la modale au clique"/>
                             ${
                               navigation
-                                ? '<div class="mg-next" style="cursor:pointer;position:absolute;top:50%;right:-15px;background:white;}">></div>'
+                                ? '<div class="mg-next" style="cursor:pointer;position:absolute;top:50%;right:-15px;background:white;">></div>'
                                 : '<span style="display:none;" />'
                             }
                         </div>
