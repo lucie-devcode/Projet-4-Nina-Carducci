@@ -22,6 +22,10 @@ body {
   font-size: 26px;
 }
 
+.tags-bar .nav-link {
+  cursor: pointer;
+}
+
 .nav ul {
   display: flex;
   list-style-type: none;
