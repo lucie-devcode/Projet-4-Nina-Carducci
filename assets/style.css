@@ -358,3 +358,38 @@ input[type="submit"] {
     width: 80%;
   }
 }
+
+footer {
+  background: #f5f5f5;
+  padding: 40px 20px;
+  margin-top: 60px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  font-family: Arial, sans-serif;
+}
+
+footer h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: black;
+}
+
+footer .infos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+footer .location p,
+footer .location span,
+footer .phone p {
+  margin: 3px 0;
+  font-size: 1rem;
+  color: black;
+}
+
+footer strong[itemprop="telephone"] {
+  font-size: 1.2rem;
+  color: #000;
+  font-weight: bold;
+}

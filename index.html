@@ -342,39 +342,61 @@
         </figure>
       </aside>
     </main>
-    <footer>
-      <section id="contact">
-        <div class="container">
-          <div class="form-container">
-            <h2>Une question ? Une demande de devis ?</h2>
-            <p>
-              N’hésitez pas à m’écrire ! Je vous répondrais en moins de 24
-              heures
-            </p>
-            <form action="" method="post">
-              <label for="nom">Nom</label>
-              <input type="text" name="nom" id="nom" />
-              <label for="email">Email</label>
-              <input type="email" name="email" id="email" />
-              <label>Message</label>
-              <textarea
-                name="message"
-                id="message"
-                cols="30"
-                rows="10"
-              ></textarea>
-              <input type="submit" value="Envoyer" />
-            </form>
-          </div>
-          <div class="picture right">
-            <img
-              src="./assets/images/camera.webp"
-              alt="photo d'un appareil photo"
-              loading="lazy"
-            />
-          </div>
+    <section id="contact">
+      <div class="container">
+        <div class="form-container">
+          <h2>Une question ? Une demande de devis ?</h2>
+          <p>
+            N’hésitez pas à m’écrire ! Je vous répondrais en moins de 24 heures
+          </p>
+          <form action="" method="post">
+            <label for="nom">Nom</label>
+            <input type="text" name="nom" id="nom" />
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" />
+            <label>Message</label>
+            <textarea
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+            ></textarea>
+            <input type="submit" value="Envoyer" />
+          </form>
         </div>
-      </section>
-    </footer>
+        <div class="picture right">
+          <img
+            src="./assets/images/camera.webp"
+            alt="photo d'un appareil photo"
+            loading="lazy"
+          />
+          <footer itemscope itemtype="https://schema.org/Photographer">
+            <h2 itemprop="name">Nina Carducci, Photographe</h2>
+
+            <div class="infos">
+              <div
+                class="location"
+                itemprop="address"
+                itemscope
+                itemtype="https://schema.org/PostalAddress"
+              >
+                <p itemprop="streetAddress">68 avenue Alsace-Lorraine</p>
+                <p>
+                  <span itemprop="postalCode">33200</span>
+                  <span itemprop="addressLocality">Bordeaux</span>
+                </p>
+              </div>
+
+              <div class="phone">
+                <p itemprop="openingHours" content="Mo-Fr 10:00-19:00">
+                  Disponible du lundi au vendredi de 10h à 19h
+                </p>
+                <strong itemprop="telephone">05 56 67 78 89</strong>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
